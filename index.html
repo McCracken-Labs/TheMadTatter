@@ -352,6 +352,8 @@
   .madtoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   body.mad{animation:madpulse 5.5s ease}
   @keyframes madpulse{0%,100%{filter:none}30%{filter:saturate(1.35) hue-rotate(-8deg)}}
+  body.jabber{animation:jshake .65s}
+  @keyframes jshake{0%,100%{transform:translateX(0)}12%{transform:translateX(-11px) rotate(-.4deg)}26%{transform:translateX(10px) rotate(.3deg)}40%{transform:translateX(-8px)}54%{transform:translateX(7px)}68%{transform:translateX(-5px)}82%{transform:translateX(3px)}}
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.inview{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
@@ -910,8 +912,8 @@
     if(sizeBusy) return; sizeBusy = true;
     root.classList.add('potion');
     root.classList.add(dir > 0 ? 'grow' : 'shrink');
-    setTimeout(()=> root.classList.remove('grow','shrink'), 2900);
-    setTimeout(()=> sizeBusy = false, 3700);
+    setTimeout(()=> root.classList.remove('grow','shrink'), 2400);
+    setTimeout(()=> sizeBusy = false, 3500);
     bumpSecret();
   }
   const drink = document.getElementById('drinkme');
@@ -922,10 +924,10 @@
   ];
   let di = 0;
   drink.addEventListener('click', ()=>{
+    const line = drinkLines[di % drinkLines.length]; di++;
     wonder(-1);
-    const r = drink.getBoundingClientRect();
-    bubble('“'+ drinkLines[di % drinkLines.length].replace(/^“|”$/g,'') +'”', r.right + 6, r.top - 40);
-    di++;
+    /* wait for the page to grow back to normal so the line is actually readable */
+    setTimeout(()=> toast('🧪 ' + line), 3500);
   });
   const mush = document.getElementById('mushroom');
   const caterLines = [
@@ -936,10 +938,9 @@
   ];
   let mi = 0;
   if(mush) mush.addEventListener('click', ()=>{
+    const line = caterLines[mi % caterLines.length]; mi++;
     wonder(1);
-    const r = mush.getBoundingClientRect();
-    bubble('“'+ caterLines[mi % caterLines.length] +'”', r.left - 250, r.top);
-    mi++;
+    setTimeout(()=> toast('🐛 “' + line + '”'), 3500);
   });
 
   /* ---------- Painting the roses red ---------- */
@@ -1040,18 +1041,37 @@
     if(!reduce){ document.body.classList.remove('mad'); void document.body.offsetWidth; document.body.classList.add('mad'); }
   }
 
-  /* triggers: Konami code, or type m-a-d */
+  /* ---------- Jabberwock (type j-a-b-b-e-r-w-o-c-k) ---------- */
+  function jabberwocky(){
+    toast("⚔ “Beware the Jabberwock, my son! The jaws that bite, the claws that catch!”");
+    if(!reduce){ document.body.classList.remove('jabber'); void document.body.offsetWidth; document.body.classList.add('jabber'); setTimeout(()=> document.body.classList.remove('jabber'), 750); }
+  }
+  /* ---------- Tweedledee & Tweedledum (type t-w-e-e-d-l-e) ---------- */
+  const tweedleLines = [
+    "“Contrariwise, if it was so, it might be; but as it isn't, it ain't. That's logic.”",
+    "“If you think we're wax-works, you ought to pay, you know.”",
+    "“Nohow. Contrariwise! That's logic.”"
+  ];
+  let twi = 0;
+  function tweedle(){ toast('👬 ' + tweedleLines[twi % tweedleLines.length]); twi++; }
+
+  /* triggers: Konami code, or type a secret word */
   const konami = [38,38,40,40,37,39,37,39,66,65]; let ki = 0;
   let buf = '';
   addEventListener('keydown', e=>{
     ki = (e.keyCode === konami[ki]) ? ki+1 : (e.keyCode === konami[0] ? 1 : 0);
     if(ki === konami.length){ ki = 0; madMode(); }
-    if(e.key && e.key.length === 1){ buf = (buf + e.key.toLowerCase()).slice(-3); if(buf === 'mad'){ madMode(); } }
+    if(e.key && e.key.length === 1){
+      buf = (buf + e.key.toLowerCase()).slice(-12);
+      if(buf.endsWith('jabberwock')){ jabberwocky(); buf = ''; }
+      else if(buf.endsWith('tweedle')){ tweedle(); buf = ''; }
+      else if(buf.endsWith('mad')){ madMode(); buf = ''; }
+    }
   });
 
   /* ---------- a hello for the curious ---------- */
   console.log('%c🐇 Curiouser and curiouser...', 'color:#e0559b;font-size:16px;font-family:serif');
-  console.log('%cYou found the console. We are all mad here. Try the Konami code, or just type m a d.', 'color:#b8862f');
+  console.log('%cYou found the console. We are all mad here. Type m-a-d, tweedle, or jabberwock, or try the Konami code.', 'color:#b8862f');
 })();
 </script>
 <!-- Scissortail: privacy-first page counter (shared worker, unique site key) -->
