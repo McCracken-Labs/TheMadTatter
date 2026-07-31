@@ -159,6 +159,18 @@
   .press-link{margin-top:auto;padding-top:14px;color:var(--cheshire);font-family:'Pirata One';letter-spacing:1px;font-size:17px}
   .press-card:hover .press-link{color:var(--gold-bright)}
 
+  /* piercings */
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .price-card{background:var(--panel);border:1px solid rgba(232,193,90,.25);border-radius:18px;padding:28px 26px;box-shadow:var(--shadow);position:relative}
+  .price-card .price-tag{position:absolute;top:20px;right:24px;font-family:'Cinzel Decorative';font-weight:900;font-size:30px;color:var(--gold-bright)}
+  .price-card h3{color:var(--gold-bright);font-size:23px;margin-bottom:14px}
+  .price-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .price-card li{background:rgba(232,193,90,.08);border:1px solid rgba(232,193,90,.22);color:var(--cream);font-size:14.5px;padding:5px 12px;border-radius:30px}
+  .price-notes{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .price-notes>div{background:linear-gradient(180deg,#0b1226,#0e1734);border:1px solid rgba(232,193,90,.18);border-radius:14px;padding:16px 20px;color:var(--cream-dim);font-size:16px}
+  .price-notes b{color:var(--gold-bright);font-family:'Cinzel Decorative';font-size:15px;letter-spacing:.5px;display:block;margin-bottom:4px}
+  @media(max-width:820px){.price-notes{grid-template-columns:1fr}}
+
   /* gallery */
   .gallery{background:linear-gradient(180deg,transparent,rgba(17,26,56,.4),transparent)}
   .grid-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
@@ -235,6 +247,7 @@
     <nav class="nav-links" id="navlinks">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#piercings">Piercings</a>
       <a href="#gallery">Gallery</a>
       <a href="#artists">Artists</a>
       <a href="#press">Press</a>
@@ -326,6 +339,43 @@
       <div class="card"><div class="ic">🎨</div><h3>Cover-Ups &amp; Reworks</h3><p>Turn an old or unwanted tattoo into something you're proud to wear, with a fresh design that fits you.</p></div>
       <div class="card"><div class="ic">🚪</div><h3>Walk-Ins Welcome</h3><p>Feeling spontaneous? Walk-ins are welcome whenever an artist is open. Call ahead to check availability.</p></div>
       <div class="card"><div class="ic">🎁</div><h3>Gift Ideas &amp; Community</h3><p>Gift certificates available, and we're proud to give back through local fundraisers and community outreach.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PIERCINGS -->
+<section id="piercings">
+  <div class="wrap">
+    <div class="eyebrow">Sit for a Spell</div>
+    <h2 class="sec-title">Piercing price list</h2>
+    <div class="divider"><span>♥</span></div>
+    <p class="lead" style="margin-bottom:34px">Every price includes basic jewelry: implant-grade titanium (Ti-6AL-4V-ELI ASTM F136) from Invictus, internally threaded or threadless. Gems and birthstones are an upgrade, and upgrade options are always available.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-tag">$40</div>
+        <h3>Basic</h3>
+        <ul>
+          <li>Earlobe</li><li>Nostril</li><li>Helix</li><li>Lip</li><li>Eyebrow</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tag">$50</div>
+        <h3>Advanced</h3>
+        <ul>
+          <li>Rook</li><li>Conch</li><li>Tragus</li><li>Anti-tragus</li><li>Snug</li><li>Daith</li><li>Tongue</li><li>Septum</li><li>Bridge</li><li>Industrial</li><li>Orbital</li><li>Vertical Labret</li><li>Nipple</li><li>Navel</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tag">$60</div>
+        <h3>Expert</h3>
+        <ul>
+          <li>Surface / Dermals</li><li>Anchor</li><li>Genital (male or female)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-notes">
+      <div><b>Age limits</b>Ear lobes (children) 7 to 8, nose 14, lip 16, navel 16. Genital, nipples, dermals and surface anchors 18.</div>
+      <div><b>Not offered</b>Snake eyes (horizontal tongue), for your safety.</div>
     </div>
   </div>
 </section>
@@ -475,7 +525,41 @@
        {file:'dragon-sleeve.jpg', cap:'Color dragon sleeve'},
      ========================================================= */
   const TATTOOS = [
-    // { file:'example1.jpg', cap:'Native thunderbird' },
+    { file:'tattoo-01.jpg' },
+    { file:'tattoo-02.jpg' },
+    { file:'tattoo-03.jpg' },
+    { file:'tattoo-04.jpg' },
+    { file:'tattoo-05.jpg' },
+    { file:'tattoo-06.jpg' },
+    { file:'tattoo-07.jpg' },
+    { file:'tattoo-08.jpg' },
+    { file:'tattoo-09.jpg' },
+    { file:'tattoo-10.jpg' },
+    { file:'tattoo-11.jpg' },
+    { file:'tattoo-12.jpg' },
+    { file:'tattoo-13.jpg' },
+    { file:'tattoo-14.jpg' },
+    { file:'tattoo-15.jpg' },
+    { file:'tattoo-16.jpg' },
+    { file:'tattoo-17.jpg' },
+    { file:'tattoo-18.jpg' },
+    { file:'tattoo-19.jpg' },
+    { file:'tattoo-20.jpg' },
+    { file:'tattoo-21.jpg' },
+    { file:'tattoo-22.jpg' },
+    { file:'tattoo-23.jpg' },
+    { file:'tattoo-24.jpg' },
+    { file:'tattoo-25.jpg' },
+    { file:'tattoo-26.jpg' },
+    { file:'tattoo-27.jpg' },
+    { file:'tattoo-28.jpg' },
+    { file:'tattoo-29.jpg' },
+    { file:'tattoo-30.jpg' },
+    { file:'tattoo-31.jpg' },
+    { file:'tattoo-32.jpg' },
+    { file:'tattoo-33.jpg' },
+    { file:'tattoo-34.jpg' },
+    { file:'tattoo-35.jpg' },
   ];
 
   const mount = document.getElementById('gallery-mount');
