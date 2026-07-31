@@ -133,16 +133,18 @@
   .nav-inner{display:flex;align-items:center;gap:18px;padding:10px 26px;max-width:1160px;margin:0 auto}
   .nav-logo{display:flex;align-items:center;gap:12px;font-family:'Cinzel Decorative';font-weight:700;color:var(--gold);font-size:19px;letter-spacing:.5px}
   .nav-logo img{width:44px;height:44px;object-fit:contain;background:#f4efe4;border-radius:50%;padding:3px;border:1.5px solid var(--gold-deep);filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
-  .nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
-  .nav-links a{color:var(--cream);font-size:16px;letter-spacing:1.5px;text-transform:uppercase;font-family:'EB Garamond';transition:color .2s}
+  .nav-links{margin-left:auto;display:flex;gap:17px;align-items:center}
+  .nav-links a{color:var(--cream);font-size:15px;letter-spacing:1px;text-transform:uppercase;font-family:'EB Garamond';transition:color .2s;white-space:nowrap}
   .nav-links a:hover{color:var(--gold-bright)}
-  .nav-call{background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));color:#1a1206 !important;padding:9px 18px;border-radius:40px;font-weight:600;letter-spacing:.5px !important;text-transform:none !important;box-shadow:0 6px 16px rgba(232,193,90,.25)}
+  .nav-call{background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));color:#1a1206 !important;padding:9px 16px;border-radius:40px;font-weight:600;letter-spacing:.3px !important;text-transform:none !important;box-shadow:0 6px 16px rgba(232,193,90,.25);white-space:nowrap}
   .nav-toggle{display:none;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:8px;padding:8px 12px;font-size:20px;cursor:pointer}
   .theme-btn{flex:0 0 auto;background:none;border:1px solid var(--gold);color:var(--gold);width:40px;height:40px;border-radius:50%;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
   .theme-btn:hover{background:rgba(232,193,90,.14);color:var(--gold-bright)}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  /* fixed-background parallax: image pinned behind the page, hero transparent, sections opaque */
+  .hero-parallax-bg{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:-1;background:#0a0e1f url('assets/img/hero-shop.jpg?v=1') center 32%/cover no-repeat;filter:brightness(.6) saturate(.92)}
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:transparent}
   .hero-bg{position:absolute;inset:0;background:url('assets/img/banner.jpg') center/cover no-repeat;transform:scale(1.05);filter:brightness(.4) saturate(.85)}
   .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,22,.66) 0%,rgba(8,11,22,.54) 42%,rgba(10,14,31,.95) 100%)}
   .hero-inner{position:relative;z-index:2;padding:60px 24px 80px;max-width:820px}
@@ -161,7 +163,7 @@
   .btn-ghost:hover{background:rgba(232,193,90,.12)}
 
   /* ---------- section framing ---------- */
-  section{padding:92px 0;position:relative}
+  section{padding:92px 0;position:relative;background:var(--midnight)}
   .eyebrow{font-family:'Pirata One';color:var(--cheshire);letter-spacing:4px;text-transform:uppercase;font-size:17px;margin-bottom:8px}
   .sec-title{font-size:clamp(28px,4.6vw,46px);color:var(--gold-bright);margin-bottom:18px}
   .lead{font-size:20px;color:var(--cream-dim);max-width:720px}
@@ -171,7 +173,7 @@
   .divider span{font-size:22px;color:var(--gold)}
 
   /* about */
-  .about{background:linear-gradient(180deg,transparent,var(--tint),transparent)}
+  .about{background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)}
   .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:start}
   .about p{margin-bottom:18px}
   .about .accolades{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
@@ -226,7 +228,7 @@
   @media(max-width:820px){.price-notes{grid-template-columns:1fr}}
 
   /* gallery */
-  .gallery{background:linear-gradient(180deg,transparent,var(--tint),transparent)}
+  .gallery{background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)}
   .grid-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
   .tile{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid rgba(232,193,90,.25);cursor:pointer;background:var(--ink)}
   .tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
@@ -251,6 +253,8 @@
   .artist-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
   .artist{background:var(--panel);border:1px solid rgba(232,193,90,.22);border-radius:20px;padding:32px 28px;box-shadow:var(--shadow);text-align:center}
   .artist .av{width:96px;height:96px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel Decorative';font-size:38px;font-weight:900;color:#1a1206;background:radial-gradient(circle at 35% 30%,var(--gold-bright),var(--gold-deep));box-shadow:0 10px 24px rgba(0,0,0,.5)}
+  .artist .av-photo{width:120px;height:120px;padding:0;background:none;overflow:hidden;border:2px solid var(--gold)}
+  .artist .av-photo img{width:100%;height:100%;object-fit:cover}
   .artist h3{color:var(--gold-bright);font-size:24px}
   .artist .tag{font-family:'Pirata One';color:var(--cheshire);letter-spacing:2px;margin:4px 0 12px}
   .artist p{color:var(--cream-dim);font-size:16px}
@@ -276,7 +280,7 @@
   footer .fsocial a{color:var(--cream);font-size:16px;letter-spacing:1px}
   footer .fine{color:#6b6656;font-size:14px}
 
-  @media(max-width:820px){
+  @media(max-width:960px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(8,11,22,.98);padding:18px 26px;gap:16px;border-bottom:1px solid rgba(232,193,90,.25)}
     .nav-links.show{display:flex}
     .nav-links a{font-size:18px}
@@ -354,6 +358,7 @@
 </style>
 </head>
 <body>
+<div class="hero-parallax-bg" aria-hidden="true"></div>
 <div class="bg-stars"></div>
 <div class="float a">♠</div>
 <div class="float b">♥</div>
@@ -368,6 +373,7 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#piercings">Piercings</a>
+      <a href="#shop">The Shop</a>
       <a href="#gallery">Gallery</a>
       <a href="#artists">Artists</a>
       <a href="#press">Press</a>
@@ -381,7 +387,6 @@
 
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
-  <div class="hero-bg"></div>
   <div class="hero-veil"></div>
   <div class="hero-inner">
     <h1 class="hero-wm"><img id="heroLogo" src="assets/img/wordmark-gold.png?v=1" alt="The Mad Tatter" style="cursor:pointer"></h1>
@@ -422,7 +427,7 @@
     <div class="divider"><span>♣</span></div>
     <div class="about-grid">
       <div>
-        <p>The Mad Tatter is Oklahoma's only <b style="color:var(--gold)">Alice in Wonderland themed</b> tattoo and body piercing shop. Isaac wanted something completely different from every cookie-cutter place, so he built this one to feel like you fell down the rabbit hole. Textured walls, bright colors, and rooms themed around the story. He means the 1951 cartoon, by the way, not the Johnny Depp version. The point is to give you something to sink into so you forget you are about to get stabbed with a needle.</p>
+        <p>The Mad Tatter is Oklahoma's only <b style="color:var(--gold)">Alice in Wonderland themed</b> tattoo and body piercing shop. Come to think of it, it may well be the only fully themed tattoo shop in the state, of any theme at all. Isaac wanted something completely different from every cookie-cutter place, so he built this one to feel like you fell down the rabbit hole. Textured walls, bright colors, and rooms themed around the story. He means the 1951 cartoon, by the way, not the Johnny Depp version. The point is to give you something to sink into so you forget you are about to get stabbed with a needle.</p>
         <p>Owner <b style="color:var(--gold)">Isaac Bruno</b> has been tattooing for more than three decades. He started back when it was still illegal in Oklahoma and worked underground, because that was the only way to do it at the time. The art goes back even further. He won his first contest in elementary school for a Star Trek drawing and has been at it ever since. "I get to color with loud crayons all day long," he says. "Who doesn't like that?"</p>
         <p>Isaac is a citizen of the Citizen Potawatomi Nation, from the Wamego family, and he opened The Mad Tatter in 2016 after wanting his own shop for years. He set it up in Shawnee on purpose, close to family and his ancestral roots. His work runs across every style, from skulls and dragons to watercolor and portraits, and a lot of it carries Native American art and ideals.</p>
         <p>He won't push you toward his own taste. If an idea won't sit right on the body he tells you straight, then works out how to give you what you actually want. "What if we do it like this," he'll say, "it would really bring out your eyes." A lot of the tattoos here start with a heartfelt story, and he has teared up right alongside clients by the time a piece is done. One tattoo of his own is an angel his daughter drew when she was four. She is nearly grown now, and he still calls her monkey.</p>
@@ -523,6 +528,18 @@
   </div>
 </section>
 
+<!-- STEP INSIDE THE SHOP -->
+<section id="shop">
+  <div class="tenniel" style="right:1%;top:10%;width:min(250px,21%)"><img src="assets/tenniel/door.png" alt="" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Fell Down the Rabbit Hole</div>
+    <h2 class="sec-title">Step inside the shop</h2>
+    <div class="divider"><span>♣</span></div>
+    <p class="lead" style="margin-bottom:34px">Every room is painted floor to ceiling like a different corner of Wonderland. Here's a look around, and Isaac at the machine.</p>
+    <div id="shop-grid"></div>
+  </div>
+</section>
+
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="tenniel" style="left:0;top:7%;width:min(320px,26%)"><img src="assets/tenniel/door.png" alt="" aria-hidden="true"></div>
@@ -546,7 +563,7 @@
     <div class="divider"><span>♥</span></div>
     <div class="artist-grid">
       <div class="artist">
-        <div class="av">IB</div>
+        <div class="av av-photo"><img src="assets/img/isaac.jpg" alt="Isaac Bruno"></div>
         <h3>Isaac Bruno</h3>
         <div class="tag">Owner &amp; Artist</div>
         <p>Citizen Potawatomi Nation. More than 30 years of experience across every style, going back to when tattooing was still done underground in Oklahoma.</p>
@@ -568,7 +585,7 @@
 </section>
 
 <!-- PRESS & RECOGNITION -->
-<section id="press" style="background:linear-gradient(180deg,transparent,var(--tint),transparent)">
+<section id="press" style="background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)">
   <div class="tenniel" style="right:2%;top:14%;width:min(270px,24%)"><img src="assets/tenniel/dodo.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow">Featured &amp; Recognized</div>
@@ -614,7 +631,7 @@
 </section>
 
 <!-- VISIT -->
-<section id="visit" style="background:linear-gradient(180deg,transparent,var(--tint),transparent)">
+<section id="visit" style="background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)">
   <div class="tenniel" style="left:0;bottom:5%;width:min(300px,25%)"><img src="assets/tenniel/alicerabbit.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow">Find the Rabbit Hole</div>
@@ -748,36 +765,31 @@
     { file:'tattoo-35.jpg' },
   ];
 
-  const mount = document.getElementById('gallery-mount');
-  if(TATTOOS.length === 0){
-    mount.innerHTML = `
-      <div class="empty-gallery">
-        <div class="door">🚪</div>
-        <h3>The Hall of Doors is being hung</h3>
-        <p>Photos of recent work are on their way. Drop tattoo images into the
-        <code>assets/tattoos</code> folder and they'll appear here.</p>
-        <p style="margin-top:12px">In the meantime, see the full portfolio on
-        <a href="https://www.facebook.com/shawneethemadtatter" target="_blank" rel="noopener">Facebook</a>.</p>
-      </div>`;
-  } else {
-    const grid = document.createElement('div');
-    grid.className = 'grid-g';
-    grid.innerHTML = TATTOOS.map((t,i)=>`
-      <div class="tile" onclick="openLb(${i})">
-        <img loading="lazy" src="assets/tattoos/${t.file}" alt="${t.cap||'Tattoo by The Mad Tatter'}">
-        ${t.cap?`<div class="cap">${t.cap}</div>`:''}
-      </div>`).join('');
+  const SHOP = ['shop-01.jpg','shop-02.jpg','shop-03.jpg','shop-04.jpg','shop-05.jpg','shop-06.jpg','shop-07.jpg','shop-08.jpg','shop-09.jpg','shop-10.jpg','shop-11.jpg','shop-12.jpg','shop-13.jpg','shop-14.jpg','shop-15.jpg'];
+
+  // ---- shared lightbox ----
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
+  let lbList = [], cur = 0;
+  function openLb(list, i){ lbList = list; cur = i; lbImg.src = list[i]; lb.classList.add('open'); }
+  function closeLb(){ lb.classList.remove('open'); }
+  function stepLb(d){ if(!lbList.length) return; cur = (cur+d+lbList.length)%lbList.length; lbImg.src = lbList[cur]; }
+  lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown', e=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') closeLb(); if(e.key==='ArrowRight') stepLb(1); if(e.key==='ArrowLeft') stepLb(-1); });
+
+  function renderGrid(mountId, base, items, alt){
+    const mount = document.getElementById(mountId);
+    if(!mount || !items.length) return;
+    const srcs = items.map(f => base + (f.file || f));
+    const grid = document.createElement('div'); grid.className = 'grid-g';
+    grid.innerHTML = items.map((f,i)=>{
+      const cap = f.cap || '';
+      return `<div class="tile"><img loading="lazy" src="${srcs[i]}" alt="${cap||alt}">${cap?`<div class="cap">${cap}</div>`:''}</div>`;
+    }).join('');
+    grid.querySelectorAll('.tile').forEach((t,i)=> t.addEventListener('click', ()=> openLb(srcs, i)));
     mount.appendChild(grid);
   }
-
-  // ---- lightbox ----
-  let cur = 0;
-  const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
-  function openLb(i){cur=i;lbImg.src='assets/tattoos/'+TATTOOS[i].file;lb.classList.add('open')}
-  function closeLb(){lb.classList.remove('open')}
-  function stepLb(d){cur=(cur+d+TATTOOS.length)%TATTOOS.length;lbImg.src='assets/tattoos/'+TATTOOS[cur].file}
-  lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
-  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')stepLb(1);if(e.key==='ArrowLeft')stepLb(-1)});
+  renderGrid('gallery-mount', 'assets/tattoos/', TATTOOS, 'Tattoo by The Mad Tatter');
+  renderGrid('shop-grid', 'assets/shop/', SHOP, 'Inside The Mad Tatter');
 </script>
 
 <!-- theme toggle + Wonderland secrets -->
