@@ -853,6 +853,7 @@
     "Imagination is the only weapon in the war against reality.",
     "Start at the beginning, then go till you come to the end."
   ];
+  let qi = 0;
   const cheshAngles = [0, 45, -45, 90, -90, 135, -135, 180, 25, -25, 60, -60];
   function placeChesh(){
     const w = chesh.classList.contains('big') ? 500 : 300;
@@ -872,7 +873,7 @@
   }
   setTimeout(appear, 4000);
   chesh.addEventListener('click', (e)=>{
-    cq.textContent = '“'+ quotes[Math.floor(rnd()*quotes.length)] +'”';
+    cq.textContent = '“'+ quotes[qi % quotes.length] +'”'; qi++;
     const r = chesh.getBoundingClientRect();
     cq.style.left = Math.min(innerWidth-260, Math.max(8, r.left)) +'px';
     cq.style.top = (r.bottom + 8) +'px';
