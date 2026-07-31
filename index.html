@@ -172,6 +172,11 @@
   .divider::before,.divider::after{content:"";height:1px;width:min(160px,26vw);background:linear-gradient(90deg,transparent,var(--gold-deep))}
   .divider::after{background:linear-gradient(90deg,var(--gold-deep),transparent)}
   .divider span{font-size:22px;color:var(--gold)}
+  .epigraph{font-family:'EB Garamond';font-style:italic;font-size:19px;color:var(--cheshire);text-align:center;max-width:660px;margin:-14px auto 36px;opacity:.92;position:relative;z-index:1}
+  html[data-theme="light"] .epigraph{color:#a23c78}
+  /* a color character tucked into a section */
+  .section-char{position:absolute;z-index:0;pointer-events:none;opacity:.9}
+  .section-char img{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.45))}
 
   /* about */
   .about{background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)}
@@ -359,6 +364,11 @@
   .cater-spot:hover img,.cater-spot:focus-visible img{animation-play-state:paused;transform:translateY(-6px) scale(1.03)}
   @keyframes sway{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   @media(max-width:820px){.cater-spot img{width:150px}}
+  /* clickable teacup */
+  .teacup-spot{position:absolute;left:2%;bottom:7%;z-index:2;background:none;border:0;padding:0;cursor:pointer}
+  .teacup-spot img{width:min(150px,17vw);height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45));transition:transform .3s}
+  .teacup-spot:hover img,.teacup-spot:focus-visible img{transform:translateY(-5px) rotate(-4deg)}
+  @media(max-width:820px){.teacup-spot img{width:96px}}
   /* character apparition (Tweedles, Queen, etc.) */
   .apparition{position:fixed;left:50%;bottom:12%;transform:translateX(-50%) translateY(24px) scale(.9);z-index:83;opacity:0;transition:opacity .5s ease,transform .5s ease;pointer-events:none}
   .apparition.show{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
@@ -431,6 +441,7 @@
     <div class="eyebrow">Down the Rabbit Hole</div>
     <h2 class="sec-title">Where your story becomes the ink</h2>
     <div class="divider"><span>♣</span></div>
+    <p class="epigraph">“Sometimes I've believed as many as six impossible things before breakfast.”</p>
     <div class="about-grid">
       <div>
         <p>The Mad Tatter is Oklahoma's only <b style="color:var(--gold)">Alice in Wonderland themed</b> tattoo and body piercing shop. Come to think of it, it may well be the only fully themed tattoo shop in the state, of any theme at all. Isaac wanted something completely different from every cookie-cutter place, so he built this one to feel like you fell down the rabbit hole. Textured walls, bright colors, and rooms themed around the story. He means the 1951 cartoon, by the way, not the Johnny Depp version. The point is to give you something to sink into so you forget you are about to get stabbed with a needle.</p>
@@ -481,10 +492,12 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="tenniel" style="right:0;top:8%;width:min(430px,38%)"><img src="assets/tenniel/teaparty.png" alt="" aria-hidden="true"></div>
+  <button class="teacup-spot" id="teacupSpot" aria-label="A cup of tea"><img src="assets/art/teacup.png?v=1" alt="" aria-hidden="true"></button>
   <div class="wrap">
     <div class="eyebrow">The Tea Party Menu</div>
     <h2 class="sec-title">What we do</h2>
     <div class="divider"><span>♦</span></div>
+    <p class="epigraph">“It's always tea-time here.”</p>
     <div class="cards">
       <div class="card"><div class="ic">🖋️</div><h3>Custom Tattoos</h3><p>Original designs built around your story, in whatever style fits you, from fine-line to bold color to traditional.</p></div>
       <div class="card"><div class="ic">💎</div><h3>Body Piercings</h3><p>Professional piercings in a clean, sterile setup, with quality jewelry and aftercare guidance.</p></div>
@@ -505,6 +518,7 @@
     <div class="eyebrow">Sit for a Spell</div>
     <h2 class="sec-title">Piercing price list</h2>
     <div class="divider"><span>♥</span></div>
+    <p class="epigraph">“Keep your temper, said the Caterpillar.”</p>
     <p class="lead" style="margin-bottom:34px">Every price includes basic jewelry: implant-grade titanium (Ti-6AL-4V-ELI ASTM F136) from Invictus, internally threaded or threadless. Gems and birthstones are an upgrade, and upgrade options are always available.</p>
     <div class="price-grid">
       <div class="price-card">
@@ -543,6 +557,7 @@
     <div class="eyebrow">Fell Down the Rabbit Hole</div>
     <h2 class="sec-title">Step inside the shop</h2>
     <div class="divider"><span>♣</span></div>
+    <p class="epigraph">“Down went Alice, never once considering how in the world she was to get out again.”</p>
     <p class="lead" style="margin-bottom:34px">Every room is painted floor to ceiling like a different corner of Wonderland. Here's a look around, and Isaac at the machine.</p>
     <div id="shop-grid"></div>
   </div>
@@ -555,6 +570,7 @@
     <div class="eyebrow">The Hall of Doors</div>
     <h2 class="sec-title">The Showcase</h2>
     <div class="divider"><span>♠</span></div>
+    <p class="epigraph">“Every adventure requires a first step.”</p>
     <p class="lead" style="margin-bottom:34px">A showcase of work from The Mad Tatter. Click any piece to see it up close, and find plenty more over on Facebook.</p>
     <div id="gallery-mount"></div>
     <div style="text-align:center;margin-top:40px">
@@ -565,10 +581,12 @@
 
 <!-- ARTISTS -->
 <section id="artists">
+  <div class="section-char" style="right:0;bottom:2%;width:min(320px,26%)"><img src="assets/art/cheshire-cat.png?v=1" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow">The Mad Ones</div>
     <h2 class="sec-title">Our artists</h2>
     <div class="divider"><span>♥</span></div>
+    <p class="epigraph">“We're all mad here. I'm mad. You're mad.”</p>
     <div class="artist-grid">
       <div class="artist">
         <div class="av av-photo"><img src="assets/img/isaac.jpg" alt="Isaac Bruno"></div>
@@ -599,6 +617,7 @@
     <div class="eyebrow">Featured &amp; Recognized</div>
     <h2 class="sec-title">Press &amp; awards</h2>
     <div class="divider"><span>♦</span></div>
+    <p class="epigraph">“Everybody has won, and all must have prizes.”</p>
     <p class="lead" style="margin-bottom:34px">Isaac and The Mad Tatter have been honored locally and featured by the Citizen Potawatomi Nation.</p>
 
     <div class="press-award">
@@ -645,6 +664,7 @@
     <div class="eyebrow">Find the Rabbit Hole</div>
     <h2 class="sec-title">Visit the shop</h2>
     <div class="divider"><span>🗝</span></div>
+    <p class="epigraph">“Oh dear! Oh dear! I shall be too late!”</p>
     <div class="visit-grid">
       <div>
         <ul class="info-list">
@@ -947,6 +967,22 @@
     const r = caterSpot.getBoundingClientRect();
     bubble('🐛 “' + line + '”', Math.min(innerWidth-260, r.left), r.top - 10);
     bumpSecret();
+  });
+
+  /* ---------- the teacup (an unbirthday and a spot of tea) ---------- */
+  const teacupSpot = document.getElementById('teacupSpot');
+  const teaLines = [
+    "A very merry unbirthday to you!",
+    "Have I gone mad? I'm afraid so. But the best people are.",
+    "It's always tea-time.",
+    "Clean cup, clean cup! Move down!",
+    "No room! No room!"
+  ];
+  let ti2 = 0;
+  if(teacupSpot) teacupSpot.addEventListener('click', ()=>{
+    const r = teacupSpot.getBoundingClientRect();
+    bubble('🫖 “' + teaLines[ti2 % teaLines.length] + '”', r.right + 6, r.top - 10);
+    ti2++; bumpSecret();
   });
 
   /* ---------- character apparition (a full illustration fades in) ---------- */
