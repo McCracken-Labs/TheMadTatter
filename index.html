@@ -811,21 +811,24 @@
     "We're all a little mad. The best people usually are.",
     "Start at the beginning, then go till you come to the end."
   ];
+  const cheshAngles = [0, 45, -45, 90, -90, 135, -135, 180, 25, -25, 60, -60];
   function placeChesh(){
     const w = chesh.classList.contains('big') ? 500 : 300;
     const x = Math.max(10, Math.floor(rnd()*(innerWidth - w - 20)));
-    const y = Math.max(84, Math.floor(rnd()*(innerHeight - 260)) + 70);
-    chesh.style.left = x+'px'; chesh.style.top = y+'px'; chesh.style.transform = '';
+    const y = Math.max(84, Math.floor(rnd()*(innerHeight - 300)) + 74);
+    const ang = cheshAngles[Math.floor(rnd()*cheshAngles.length)];
+    chesh.style.left = x+'px'; chesh.style.top = y+'px';
+    chesh.style.transform = 'rotate('+ang+'deg)';
   }
   function appear(){
     if(!document.hidden){
       chesh.classList.remove('big'); placeChesh();
       chesh.classList.add('show');
-      setTimeout(()=> chesh.classList.remove('show'), 3600);
+      setTimeout(()=> chesh.classList.remove('show'), 3000 + rnd()*1800);
     }
-    setTimeout(appear, 24000 + rnd()*40000);
+    setTimeout(appear, 8000 + rnd()*11000);   /* peeks every ~8-19s */
   }
-  setTimeout(appear, 8000);
+  setTimeout(appear, 4000);
   chesh.addEventListener('click', (e)=>{
     cq.textContent = '“'+ quotes[Math.floor(rnd()*quotes.length)] +'”';
     const r = chesh.getBoundingClientRect();
