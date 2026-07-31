@@ -304,8 +304,8 @@
   .drinkme svg{width:50px;height:76px}
   .drinkme .tag{display:block;font-family:'Pirata One';font-size:16px;letter-spacing:1px;color:var(--gold-bright);margin-top:2px}
   html.potion body{transition:transform 1s cubic-bezier(.5,-0.35,.4,1.4)}
-  html.shrink body{transform:scale(.82);transform-origin:top center}
-  html.grow body{transform:scale(1.14);transform-origin:top center}
+  html.shrink body{transform:scale(.24);transform-origin:top center}
+  html.grow body{transform:scale(1.7);transform-origin:top center}
   /* caterpillar's mushroom (Eat Me / grow) */
   .mushroom{position:absolute;right:26px;bottom:30px;z-index:6;background:none;border:0;cursor:pointer;text-align:center;opacity:.92;transition:transform .3s,opacity .3s;filter:drop-shadow(0 5px 10px rgba(0,0,0,.55))}
   .mushroom:hover,.mushroom:focus-visible{opacity:1;transform:translateY(-5px) rotate(-3deg);outline:none}
@@ -622,11 +622,11 @@
         <p>Citizen Potawatomi Nation on YouTube</p>
         <span class="press-link">Watch →</span>
       </a>
-      <a class="card press-card" href="https://www.yelp.com/biz/the-mad-tatter-shawnee" target="_blank" rel="noopener">
+      <a class="card press-card" href="https://www.google.com/maps?cid=6136202620969266445" target="_blank" rel="noopener">
         <div class="ic">⭐</div>
         <h3>Reviews &amp; ratings</h3>
-        <p>98% recommend on Facebook · see reviews on Yelp</p>
-        <span class="press-link">See reviews →</span>
+        <p>4.7 stars across 450+ Google reviews, and 98% recommend on Facebook.</p>
+        <span class="press-link">Read Google reviews →</span>
       </a>
     </div>
   </div>
@@ -901,7 +901,7 @@
     if(sizeBusy) return; sizeBusy = true;
     root.classList.add('potion');
     root.classList.add(dir > 0 ? 'grow' : 'shrink');
-    setTimeout(()=> root.classList.remove('grow','shrink'), 2600);
+    setTimeout(()=> root.classList.remove('grow','shrink'), 2900);
     setTimeout(()=> sizeBusy = false, 3700);
     bumpSecret();
   }
