@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Mad Tatter · Tattoos &amp; Body Piercings · Shawnee, OK</title>
-<meta name="description" content="The Mad Tatter — Oklahoma's only Alice in Wonderland themed tattoo &amp; body piercing shop, in Shawnee, OK. Owned by Isaac Bruno. Custom tattoos, piercings, walk-ins welcome. We're all mad here.">
+<meta name="description" content="The Mad Tatter is Oklahoma's only Alice in Wonderland themed tattoo &amp; body piercing shop, in Shawnee, OK. Owned by Isaac Bruno. Custom tattoos, piercings, walk-ins welcome. We're all mad here.">
 <meta property="og:title" content="The Mad Tatter · Shawnee, OK">
 <meta property="og:description" content="Become like Alice; enter in the rabbit hole and see the Hall of Doors. Just know we're all mad here.">
 <meta property="og:image" content="assets/img/banner.jpg">
@@ -118,7 +118,7 @@
 
   /* about */
   .about{background:linear-gradient(180deg,transparent,rgba(17,26,56,.35),transparent)}
-  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:start}
   .about p{margin-bottom:18px}
   .about .accolades{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
   .badge{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid rgba(232,193,90,.3);border-radius:14px;padding:12px 16px;font-size:16px;box-shadow:var(--shadow)}
@@ -128,6 +128,18 @@
   .about-card .quote{font-size:22px;font-style:italic;color:var(--cream);position:relative;z-index:1}
   .about-card .who{margin-top:18px;font-family:'Pirata One';color:var(--green);letter-spacing:2px;font-size:20px}
   .about-card .role{color:var(--cream-dim);font-size:15px}
+  .about-side{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}
+  .about-styles{background:var(--panel);border:1px solid rgba(232,193,90,.25);border-radius:18px;padding:24px 26px;box-shadow:var(--shadow)}
+  .about-styles h4{font-family:'Cinzel Decorative';color:var(--gold-bright);font-size:17px;letter-spacing:.5px;margin-bottom:14px}
+  .about-styles ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+  .about-styles li{color:var(--cream);font-size:16px;padding-left:20px;position:relative}
+  .about-styles li::before{content:"♦";position:absolute;left:0;color:var(--cheshire);font-size:12px;top:4px}
+
+  /* quote band */
+  .quoteband{background:linear-gradient(180deg,#0b1226,#0e1734);border-top:1px solid rgba(232,193,90,.18);border-bottom:1px solid rgba(232,193,90,.18);text-align:center;padding:74px 0}
+  .quoteband blockquote{font-family:'EB Garamond';font-style:italic;font-size:clamp(22px,3.4vw,32px);color:var(--cream);max-width:860px;margin:0 auto;position:relative;line-height:1.5}
+  .quoteband blockquote::before{content:"“";font-family:'Cinzel Decorative';color:rgba(232,193,90,.28);font-size:90px;line-height:0;position:absolute;left:-6px;top:24px}
+  .quoteband cite{display:block;margin-top:22px;font-family:'Pirata One';font-style:normal;color:var(--cheshire);letter-spacing:3px;font-size:19px}
 
   /* services */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
@@ -237,7 +249,7 @@
   <div class="hero-bg"></div>
   <div class="hero-veil"></div>
   <div class="hero-inner">
-    <img class="hero-logo" src="assets/img/logo.jpg" alt="The Mad Tatter — Tattoos &amp; Body Piercings">
+    <img class="hero-logo" src="assets/img/logo.jpg" alt="The Mad Tatter, Tattoos and Body Piercings">
     <h1>The Mad Tatter</h1>
     <div class="sub">Tattoos &amp; Body Piercings · Shawnee, OK</div>
     <blockquote>“Become like Alice; enter in the rabbit hole and see the Hall of Doors. <b>Just know we're all mad here.</b>”</blockquote>
@@ -257,22 +269,47 @@
     <div class="divider"><span>♣</span></div>
     <div class="about-grid">
       <div>
-        <p>The Mad Tatter is Oklahoma's only <b style="color:var(--gold)">Alice in Wonderland themed</b> tattoo and body piercing shop — a place where the walls, the colors, and every room are built to feel like you've tumbled straight down the rabbit hole into Wonderland.</p>
-        <p>The shop is owned by <b style="color:var(--gold)">Isaac Bruno</b>, a citizen of the Potawatomi Nation with nearly three decades of professional tattooing behind him. His art started young — an elementary-school art contest — and grew into a lifelong craft rooted in Native heritage and a love of storytelling. Isaac doesn't favor a single style; he sits down with each client to turn personal memories and meaning into a design that's truly theirs, whether that's a portrait, a dragon, watercolor, black-and-grey realism, or a Native-inspired piece.</p>
-        <p>Since opening in 2016, The Mad Tatter has become a Shawnee staple — recognized by the community, honored by his tribe, and built on a simple idea: <i>family and taking care of people come first.</i></p>
+        <p>The Mad Tatter is Oklahoma's only <b style="color:var(--gold)">Alice in Wonderland themed</b> tattoo and body piercing shop. Isaac wanted something completely different from every cookie-cutter place, so he built this one to feel like you fell down the rabbit hole. Textured walls, bright colors, and rooms themed around the story. He means the 1951 cartoon, by the way, not the Johnny Depp version. The point is to give you something to sink into so you forget you are about to get stabbed with a needle.</p>
+        <p>Owner <b style="color:var(--gold)">Isaac Bruno</b> has been tattooing for more than three decades. He started back when it was still illegal in Oklahoma and worked underground, because that was the only way to do it at the time. The art goes back even further. He won his first contest in elementary school for a Star Trek drawing and has been at it ever since. "I get to color with loud crayons all day long," he says. "Who doesn't like that?"</p>
+        <p>Isaac is a citizen of the Citizen Potawatomi Nation, from the Wamego family, and he opened The Mad Tatter in 2016 after wanting his own shop for years. He set it up in Shawnee on purpose, close to family and his ancestral roots. His work runs across every style, from skulls and dragons to watercolor and portraits, and a lot of it carries Native American art and ideals.</p>
+        <p>He won't push you toward his own taste. If an idea won't sit right on the body he tells you straight, then works out how to give you what you actually want. "What if we do it like this," he'll say, "it would really bring out your eyes." A lot of the tattoos here start with a heartfelt story, and he has teared up right alongside clients by the time a piece is done. One tattoo of his own is an angel his daughter drew when she was four. She is nearly grown now, and he still calls her monkey.</p>
+        <p>Family runs through all of it. Isaac and the shop give back through things like Santa for Soldiers and local food drives, and the door stays open to anyone. "We treat everybody like family," he says. "That is the most important thing, just helping people out." In 2018, Shawnee News-Star readers voted The Mad Tatter the best tattoo parlor in town.</p>
         <div class="accolades">
           <div class="badge"><span class="n">★</span><span>“Best Tattoo Parlor”<br>Shawnee News-Star Readers</span></div>
-          <div class="badge"><span class="n">🏆</span><span>Multiple awards<br>from his tribe</span></div>
-          <div class="badge"><span class="n">30</span><span>years of<br>tattooing</span></div>
+          <div class="badge"><span class="n">🏆</span><span>Recognized by the<br>Potawatomi Nation</span></div>
+          <div class="badge"><span class="n">30+</span><span>years of<br>tattooing</span></div>
           <div class="badge"><span class="n">11K</span><span>followers on<br>Facebook</span></div>
         </div>
       </div>
-      <div class="about-card">
-        <div class="quote">“We wanted to make it like you fell down the rabbit hole, and you were in Alice in Wonderland.”</div>
-        <div class="who">Isaac Bruno</div>
-        <div class="role">Owner &amp; Artist · Citizen Potawatomi Nation</div>
+      <div class="about-side">
+        <div class="about-card">
+          <div class="quote">“We wanted to make it like you fell down the rabbit hole, and you were in Alice in Wonderland.”</div>
+          <div class="who">Isaac Bruno</div>
+          <div class="role">Owner &amp; Artist · Citizen Potawatomi Nation</div>
+        </div>
+        <div class="about-styles">
+          <h4>Styles under one roof</h4>
+          <ul>
+            <li>Custom &amp; freehand</li>
+            <li>Portraits &amp; realism</li>
+            <li>Watercolor &amp; color</li>
+            <li>Black &amp; grey</li>
+            <li>Native-inspired</li>
+            <li>Cover-ups</li>
+            <li>Body piercings</li>
+            <li>Walk-ins</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section class="quoteband">
+  <div class="wrap">
+    <blockquote>It's someone wanting my art on them forever, trusting me to deliver what they want or what they believe in, or to invoke a feeling. I think that's really nice.</blockquote>
+    <cite>Isaac Bruno</cite>
   </div>
 </section>
 
@@ -283,9 +320,9 @@
     <h2 class="sec-title">What we do</h2>
     <div class="divider"><span>♦</span></div>
     <div class="cards">
-      <div class="card"><div class="ic">🖋️</div><h3>Custom Tattoos</h3><p>Original, collaborative designs built around your story — every style, from fine-line to bold color, realism to traditional.</p></div>
+      <div class="card"><div class="ic">🖋️</div><h3>Custom Tattoos</h3><p>Original designs built around your story, in whatever style fits you, from fine-line to bold color to traditional.</p></div>
       <div class="card"><div class="ic">💎</div><h3>Body Piercings</h3><p>Professional piercings in a clean, sterile setup, with quality jewelry and aftercare guidance.</p></div>
-      <div class="card"><div class="ic">🪶</div><h3>Native &amp; Cultural Work</h3><p>Heritage-inspired designs drawn from Native American art and ideals — meaningful pieces done with care and respect.</p></div>
+      <div class="card"><div class="ic">🪶</div><h3>Native &amp; Cultural Work</h3><p>Heritage-inspired designs drawn from Native American art and ideals, done with care and respect.</p></div>
       <div class="card"><div class="ic">🎨</div><h3>Cover-Ups &amp; Reworks</h3><p>Turn an old or unwanted tattoo into something you're proud to wear, with a fresh design that fits you.</p></div>
       <div class="card"><div class="ic">🚪</div><h3>Walk-Ins Welcome</h3><p>Feeling spontaneous? Walk-ins are welcome whenever an artist is open. Call ahead to check availability.</p></div>
       <div class="card"><div class="ic">🎁</div><h3>Gift Ideas &amp; Community</h3><p>Gift certificates available, and we're proud to give back through local fundraisers and community outreach.</p></div>
@@ -315,7 +352,7 @@
         <div class="av">IB</div>
         <h3>Isaac Bruno</h3>
         <div class="tag">Owner &amp; Artist</div>
-        <p>Citizen Potawatomi Nation. Nearly 30 years of experience across every style, with a love for Native-inspired and story-driven custom work.</p>
+        <p>Citizen Potawatomi Nation. More than 30 years of experience across every style, going back to when tattooing was still done underground in Oklahoma.</p>
       </div>
       <div class="artist">
         <div class="av">J</div>
@@ -345,7 +382,7 @@
       <span class="ribbon">🏆</span>
       <div>
         <b>“Best Tattoo Parlor”</b>
-        <span>Shawnee News-Star Readers' Choice — 2018</span>
+        <span>Shawnee News-Star Readers' Choice, 2018</span>
       </div>
     </div>
 
