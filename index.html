@@ -9,7 +9,8 @@
 <meta name="description" content="The Mad Tatter is Oklahoma's only Alice in Wonderland themed tattoo &amp; body piercing shop, in Shawnee, OK. Owned by Isaac Bruno. Custom tattoos, piercings, walk-ins welcome. We're all mad here.">
 <meta property="og:title" content="The Mad Tatter · Shawnee, OK">
 <meta property="og:description" content="Become like Alice; enter in the rabbit hole and see the Hall of Doors. Just know we're all mad here.">
-<meta property="og:image" content="assets/img/banner.jpg">
+<meta property="og:image" content="https://mccracken-labs.github.io/TheMadTatter/assets/img/hero-shop.jpg">
+<meta property="og:url" content="https://mccracken-labs.github.io/TheMadTatter/">
 <meta property="og:type" content="business.business">
 <link rel="icon" href="assets/img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -279,6 +280,11 @@
   footer .fsocial{display:flex;gap:22px;justify-content:center;margin:14px 0 22px;flex-wrap:wrap}
   footer .fsocial a{color:var(--cream);font-size:16px;letter-spacing:1px}
   footer .fine{color:#6b6656;font-size:14px}
+  footer .site-credit{margin-top:10px;font-size:13px;color:#5c5748}
+  footer .site-credit a{color:#8a7f5f}
+  footer .site-credit a:hover{color:var(--gold)}
+  .skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--gold);color:#1a1206;padding:10px 16px;border-radius:0 0 10px 0;font-weight:700;font-family:'EB Garamond'}
+  .skip:focus{left:0}
 
   @media(max-width:960px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(8,11,22,.98);padding:18px 26px;gap:16px;border-bottom:1px solid rgba(232,193,90,.25)}
@@ -358,6 +364,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
 <div class="hero-parallax-bg" aria-hidden="true"></div>
 <div class="bg-stars"></div>
 <div class="float a">♠</div>
@@ -398,7 +405,7 @@
       <a href="https://www.facebook.com/shawneethemadtatter" target="_blank" rel="noopener" class="btn btn-ghost">Message on Facebook</a>
     </div>
   </div>
-  <button class="mushroom" id="mushroom" aria-label="Eat Me — grow">
+  <button class="mushroom" id="mushroom" aria-label="Eat Me, grow">
     <svg viewBox="0 0 92 96" aria-hidden="true">
       <!-- caterpillar on the cap -->
       <g>
@@ -678,6 +685,7 @@
       <a href="https://maps.google.com/?q=2304+N+Harrison+Ave+Shawnee+OK+74804" target="_blank" rel="noopener">📍 Directions</a>
     </div>
     <div class="fine">© <span id="yr"></span> The Mad Tatter · Tattoos &amp; Body Piercings · Shawnee, Oklahoma · Owned by Isaac Bruno</div>
+    <p class="site-credit">Design &amp; development by <a href="https://mccrackenlandservices.com/labs/" target="_blank" rel="noopener">McCracken Labs</a></p>
   </div>
 </footer>
 
