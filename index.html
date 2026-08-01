@@ -207,7 +207,8 @@
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
   .card{background:var(--panel);border:1px solid rgba(232,193,90,.2);border-radius:18px;padding:30px 26px;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
   .card:hover{transform:translateY(-6px);border-color:var(--gold)}
-  .card .ic{font-size:38px;margin-bottom:12px}
+  .card .ic{font-size:38px;margin-bottom:14px;min-height:70px;display:flex;align-items:flex-end}
+  .card .ic img{max-height:72px;max-width:120px;width:auto;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
   .card h3{color:var(--gold-bright);font-size:22px;margin-bottom:10px}
   .card p{color:var(--cream-dim);font-size:17px}
 
@@ -499,14 +500,14 @@
     <div class="divider"><span>♦</span></div>
     <p class="epigraph">“It's always tea-time here.”</p>
     <div class="cards">
-      <div class="card"><div class="ic">🖋️</div><h3>Custom Tattoos</h3><p>Original designs built around your story, in whatever style fits you, from fine-line to bold color to traditional.</p></div>
-      <div class="card"><div class="ic">💎</div><h3>Body Piercings</h3><p>Professional piercings in a clean, sterile setup, with quality jewelry and aftercare guidance.</p></div>
-      <div class="card"><div class="ic">🪶</div><h3>Native &amp; Cultural Work</h3><p>Heritage-inspired designs drawn from Native American art and ideals, done with care and respect.</p></div>
-      <div class="card"><div class="ic">🎨</div><h3>Cover-Ups &amp; Reworks</h3><p>Turn an old or unwanted tattoo into something you're proud to wear, with a fresh design that fits you.</p></div>
-      <div class="card"><div class="ic">🚪</div><h3>Walk-Ins Welcome</h3><p>Feeling spontaneous? Walk-ins are welcome whenever an artist is open. Call ahead to check availability.</p></div>
-      <div class="card"><div class="ic">🎁</div><h3>Gift Ideas &amp; Community</h3><p>Gift certificates available, and we're proud to give back through local fundraisers and community outreach.</p></div>
-      <div class="card"><div class="ic">✏️</div><h3>Free Consultations</h3><p>Not sure exactly what you want yet? Sit down with Isaac to plan it out. There's no charge and no pressure to talk your idea through.</p></div>
-      <div class="card"><div class="ic">🧼</div><h3>Clean &amp; Sterile</h3><p>Single-use needles, hospital-grade sterilization, and a licensed, professional setup for every tattoo and piercing.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/tattoo.png?v=1" alt="" aria-hidden="true"></div><h3>Custom Tattoos</h3><p>Original designs built around your story, in whatever style fits you, from fine-line to bold color to traditional.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/piercing.png?v=1" alt="" aria-hidden="true"></div><h3>Body Piercings</h3><p>Professional piercings in a clean, sterile setup, with quality jewelry and aftercare guidance.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/native.png?v=1" alt="" aria-hidden="true"></div><h3>Native &amp; Cultural Work</h3><p>Heritage-inspired designs drawn from Native American art and ideals, done with care and respect.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/coverup.png?v=1" alt="" aria-hidden="true"></div><h3>Cover-Ups &amp; Reworks</h3><p>Turn an old or unwanted tattoo into something you're proud to wear, with a fresh design that fits you.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/walkins.png?v=1" alt="" aria-hidden="true"></div><h3>Walk-Ins Welcome</h3><p>Feeling spontaneous? Walk-ins are welcome whenever an artist is open. Call ahead to check availability.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/gift.png?v=1" alt="" aria-hidden="true"></div><h3>Gift Ideas &amp; Community</h3><p>Gift certificates available, and we're proud to give back through local fundraisers and community outreach.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/consult.png?v=1" alt="" aria-hidden="true"></div><h3>Free Consultations</h3><p>Not sure exactly what you want yet? Sit down with Isaac to plan it out. There's no charge and no pressure to talk your idea through.</p></div>
+      <div class="card"><div class="ic"><img src="assets/icons/sterile.png?v=1" alt="" aria-hidden="true"></div><h3>Clean &amp; Sterile</h3><p>Single-use needles, hospital-grade sterilization, and a licensed, professional setup for every tattoo and piercing.</p></div>
     </div>
   </div>
 </section>
@@ -756,6 +757,7 @@
        {file:'dragon-sleeve.jpg', cap:'Color dragon sleeve'},
      ========================================================= */
   const TATTOOS = [
+    { file:'mccracken-wolf.jpg', cap:'The McCracken Wolf' },
     { file:'tattoo-01.jpg' },
     { file:'tattoo-02.jpg' },
     { file:'tattoo-03.jpg' },
