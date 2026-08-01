@@ -279,14 +279,40 @@
   .map-wrap iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(.3) contrast(1.05)}
   .walkins{margin-top:26px;background:linear-gradient(180deg,var(--green-deep),#1f5638);border-radius:16px;padding:20px 24px;text-align:center;font-family:'Pirata One';font-size:22px;letter-spacing:2px;color:#eafff0;box-shadow:var(--shadow)}
 
+  /* ---------- appointments ---------- */
+  .book-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:stretch;max-width:1000px;margin:0 auto}
+  .book-card{position:relative;background:linear-gradient(180deg,rgba(20,26,48,.72),rgba(12,16,32,.82));border:1px solid rgba(232,193,90,.3);border-radius:22px;padding:34px 30px;box-shadow:var(--shadow);overflow:hidden}
+  html[data-theme="light"] .book-card{background:linear-gradient(180deg,#fff9ec,#f6edd6);border-color:rgba(154,100,19,.28)}
+  .book-card h3{font-family:'Cinzel Decorative';color:var(--gold-bright);font-size:24px;letter-spacing:.5px;margin-bottom:8px}
+  .book-sub{color:var(--cream);opacity:.9;font-size:16px;margin-bottom:22px}
+  .soon-ribbon{position:absolute;top:20px;right:-42px;transform:rotate(45deg);background:linear-gradient(180deg,var(--cheshire),#8a2f6b);color:#fff;font-family:'Pirata One';letter-spacing:2px;font-size:14px;padding:7px 54px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+  .svc-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .svc-chips span{border:1px solid rgba(232,193,90,.4);color:var(--cream);border-radius:30px;padding:8px 15px;font-size:14px;font-family:'EB Garamond';background:rgba(232,193,90,.06)}
+  .svc-chips span.on{background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));color:#1a1206;border-color:transparent;font-weight:600}
+  .cal-mock{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:24px;opacity:.85}
+  .cal-mock i{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;border-radius:9px;background:rgba(255,255,255,.05);color:var(--cream);border:1px solid rgba(232,193,90,.12)}
+  html[data-theme="light"] .cal-mock i{background:rgba(154,100,19,.06);border-color:rgba(154,100,19,.14);color:#5c4a2a}
+  .cal-mock i.hd{background:none;border:none;color:var(--cheshire);font-family:'Pirata One';letter-spacing:1px}
+  .cal-mock i.pick{background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));color:#1a1206;font-weight:700;border-color:transparent}
+  .cal-mock i.mut{opacity:.35}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .btn[disabled]:hover{transform:none}
+  .soon-note{margin-top:16px;font-size:13.5px;color:#8f8a76;font-style:italic}
+  .book-line{display:flex;align-items:center;gap:14px;padding:16px 18px;margin-bottom:14px;border-radius:14px;background:rgba(232,193,90,.07);border:1px solid rgba(232,193,90,.2);color:var(--cream);transition:transform .16s,background .16s}
+  a.book-line:hover{transform:translateY(-2px);background:rgba(232,193,90,.14)}
+  .book-line .bic{font-size:24px;width:30px;text-align:center;flex-shrink:0}
+  .book-line b{display:block;color:var(--gold-bright);font-family:'Cinzel Decorative';font-size:15px;letter-spacing:.4px}
+  .book-line small{color:var(--cream);opacity:.8;font-size:13.5px}
+  .deposit-note{margin-top:18px;font-size:13.5px;color:#8f8a76;font-style:italic;text-align:center}
+
   /* footer */
   footer{background:var(--ink);border-top:1px solid rgba(232,193,90,.2);padding:56px 0 30px;text-align:center;position:relative;overflow:hidden}
   footer .flogo{width:110px;margin:0 auto 14px;background:radial-gradient(circle at 50% 40%,#f6f1e6,#e7dcc4);padding:12px 16px;border-radius:16px;border:1.5px solid var(--gold-deep)}
   footer .fquote{font-family:'Pirata One';color:var(--cheshire);font-size:24px;letter-spacing:2px;margin-bottom:16px}
   footer .fsocial{display:flex;gap:22px;justify-content:center;margin:14px 0 22px;flex-wrap:wrap}
   footer .fsocial a{color:var(--cream);font-size:16px;letter-spacing:1px}
-  footer .fine{color:#6b6656;font-size:14px}
-  footer .site-credit{margin-top:10px;font-size:13px;color:#5c5748}
+  footer .fine{color:#6b6656;font-size:17px;line-height:1.6}
+  footer .site-credit{margin-top:12px;font-size:16px;color:#5c5748}
   footer .site-credit a{color:#8a7f5f}
   footer .site-credit a:hover{color:var(--gold)}
   .skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--gold);color:#1a1206;padding:10px 16px;border-radius:0 0 10px 0;font-weight:700;font-family:'EB Garamond'}
@@ -415,6 +441,7 @@
       <a href="#gallery">Gallery</a>
       <a href="#artists">Artists</a>
       <a href="#press">Press</a>
+      <a href="#book">Book</a>
       <a href="#visit">Visit</a>
       <a href="tel:+14053954300" class="nav-call">📞 (405) 395-4300</a>
     </nav>
@@ -431,9 +458,9 @@
     <div class="sub">Tattoos &amp; Body Piercings · Shawnee, OK</div>
     <blockquote>“Become like Alice; enter in the rabbit hole and see the Hall of Doors. <b>Just know we're all mad here.</b>”</blockquote>
     <div class="cta-row">
-      <a href="tel:+14053954300" class="btn btn-gold">📞 Call the Shop</a>
+      <a href="#book" class="btn btn-gold">🎩 Book an Appointment</a>
+      <a href="tel:+14053954300" class="btn btn-ghost">📞 Call the Shop</a>
       <a href="#visit" class="btn btn-ghost">🗝 Find Us</a>
-      <a href="https://www.facebook.com/shawneethemadtatter" target="_blank" rel="noopener" class="btn btn-ghost">Message on Facebook</a>
     </div>
   </div>
   <button class="mushroom" id="mushroom" aria-label="Eat Me, grow">
@@ -666,6 +693,42 @@
 </section>
 
 <!-- VISIT -->
+<section id="book" style="background:var(--midnight)">
+  <button class="char-spot" id="bookChar" aria-label="The White Rabbit's watch" style="right:2%;bottom:5%;width:min(130px,14%)"><img src="assets/art/pocketwatch.png?v=2" alt="" aria-hidden="true"></button>
+  <div class="wrap">
+    <div class="eyebrow">Don't Be Late</div>
+    <h2 class="sec-title">Book an appointment</h2>
+    <div class="divider"><span>⏱</span></div>
+    <p class="epigraph">“I'm late! I'm late! For a very important date!”</p>
+    <div class="book-grid">
+      <div class="book-card scheduler">
+        <div class="soon-ribbon">Coming Soon</div>
+        <h3>Book Online</h3>
+        <p class="book-sub">Reserve your chair down the rabbit hole — choose your work, pick a time, and we'll be ready.</p>
+        <div class="svc-chips" aria-hidden="true">
+          <span class="on">Tattoo</span><span>Piercing</span><span>Cover-Up</span><span>Consultation</span>
+        </div>
+        <div class="cal-mock" aria-hidden="true">
+          <i class="hd">S</i><i class="hd">M</i><i class="hd">T</i><i class="hd">W</i><i class="hd">T</i><i class="hd">F</i><i class="hd">S</i>
+          <i class="mut">28</i><i class="mut">29</i><i class="mut">30</i><i>1</i><i>2</i><i>3</i><i>4</i>
+          <i>5</i><i>6</i><i class="pick">7</i><i>8</i><i>9</i><i>10</i><i>11</i>
+          <i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>17</i><i>18</i>
+        </div>
+        <button class="btn btn-gold" disabled>Choose a Time →</button>
+        <p class="soon-note">Self-booking is being built. Until the looking-glass opens, reserve using the options to the right.</p>
+      </div>
+      <div class="book-card now">
+        <h3>Reserve Your Spot</h3>
+        <p class="book-sub">Got an idea? Tell us about it and we'll set the date for your trip through the rabbit hole.</p>
+        <a class="book-line" href="tel:+14053954300"><span class="bic">📞</span><span><b>Call the Shop</b><small>(405) 395-4300 · Open daily 12–9</small></span></a>
+        <a class="book-line" href="https://www.facebook.com/shawneethemadtatter" target="_blank" rel="noopener"><span class="bic">📘</span><span><b>Message on Facebook</b><small>Send your reference photos & questions</small></span></a>
+        <div class="book-line"><span class="bic">🚶</span><span><b>Walk-Ins Welcome</b><small>Stop by — no appointment needed</small></span></div>
+        <p class="deposit-note">Custom pieces may start with a quick consultation & deposit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="visit" style="background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)">
   <button class="char-spot" id="visitChar" aria-label="The White Rabbit" style="right:2%;top:3%;width:min(140px,15%)"><img src="assets/art/whiterabbit.png?v=1" alt="" aria-hidden="true"></button>
   <div class="wrap">
@@ -1030,6 +1093,12 @@
       "Oh dear! Oh dear! I shall be too late!",
       "I'm late, I'm late, for a very important date!",
       "No time to say hello, goodbye, I'm late, I'm late, I'm late!"
+    ],
+    bookChar: [
+      "I'm late, I'm late! No time to lose — pick a date!",
+      "Begin at the beginning, and stop when you come to the end.",
+      "It would be so nice if something made sense for a change.",
+      "How long is forever? Sometimes, just one appointment."
     ]
   };
   Object.keys(charQuotes).forEach(id=>{
