@@ -238,6 +238,9 @@
   /* gallery */
   .gallery{background:linear-gradient(180deg,transparent,var(--tint),transparent),var(--midnight)}
   .grid-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  #gallery-mount .grid-g{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){#gallery-mount .grid-g{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:620px){#gallery-mount .grid-g{grid-template-columns:repeat(2,1fr)}}
   .tile{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid rgba(232,193,90,.25);cursor:pointer;background:var(--ink)}
   .tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
   .tile:hover img{transform:scale(1.08)}
@@ -344,8 +347,7 @@
     .cater-spot,#pressChar{display:none}
     /* keep the rest small and never let them intercept taps meant for content */
     #shopChar,#visitChar,#bookChar,.teacup-spot{opacity:.8}
-    /* cleaner mobile galleries: show a curated few, rest still open in the lightbox */
-    #gallery-mount .tile:nth-child(n+9){display:none}
+    /* mobile: show the full showcase (2-wide); keep the shop preview short */
     #shop-grid .tile:nth-child(n+7){display:none}
   }
   /* ---- narrow desktop / small monitors: pull decorative art off the cards ---- */
@@ -883,22 +885,6 @@
     { file:'tattoo-17.jpg' },
     { file:'tattoo-18.jpg' },
     { file:'tattoo-19.jpg' },
-    { file:'tattoo-20.jpg' },
-    { file:'tattoo-21.jpg' },
-    { file:'tattoo-22.jpg' },
-    { file:'tattoo-23.jpg' },
-    { file:'tattoo-24.jpg' },
-    { file:'tattoo-25.jpg' },
-    { file:'tattoo-26.jpg' },
-    { file:'tattoo-27.jpg' },
-    { file:'tattoo-28.jpg' },
-    { file:'tattoo-29.jpg' },
-    { file:'tattoo-30.jpg' },
-    { file:'tattoo-31.jpg' },
-    { file:'tattoo-32.jpg' },
-    { file:'tattoo-33.jpg' },
-    { file:'tattoo-34.jpg' },
-    { file:'tattoo-35.jpg' },
   ];
 
   const SHOP = ['shop-01.jpg','shop-02.jpg','shop-03.jpg','shop-04.jpg','shop-05.jpg','shop-06.jpg','shop-07.jpg','shop-08.jpg','shop-09.jpg','shop-10.jpg','shop-11.jpg','shop-12.jpg','shop-13.jpg','shop-14.jpg','shop-15.jpg','shop-16.jpg'];
