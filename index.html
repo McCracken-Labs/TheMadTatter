@@ -901,7 +901,7 @@
   function renderGrid(mountId, base, items, alt){
     const mount = document.getElementById(mountId);
     if(!mount || !items.length) return;
-    const srcs = items.map(f => base + (f.file || f));
+    const srcs = items.map(f => base + (f.file || f) + '?v=2');
     const grid = document.createElement('div'); grid.className = 'grid-g';
     grid.innerHTML = items.map((f,i)=>{
       const cap = f.cap || '';
